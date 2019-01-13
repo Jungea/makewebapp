@@ -7,18 +7,25 @@
 </head>
 <body id="target">
 	<header>
-		<h1><a href="http://localhost/Webn/">JavaScript</a></h1>
+		<img src="https://s3.ap-northeast-2.amazonaws.com/opentutorials-user-file/course/94.png" alt="생활코딩">
+		<h1><a href="http://localhost/Webn/index.php">JavaScript</a></h1>
 	</header>
 	<nav>
 		<ol>
-			<li><a href="http://localhost/Webn/page_html.html">JavaScript란?</a></li>
-			<li><a href="http://localhost/Webn/page_vc.html">변수와 상수</a></li>
-			<li><a href="http://localhost/Webn/page_op.html">연산자</a></li>
+			<?php 
+			echo file_get_contents("list.txt");
+			?>
 		</ol>
 	</nav>
 	<div id="control">
 		<input type="button" value="white" onclick="document.getElementById('target').className='white'" />
 		<input type="button" value="black" onclick="document.getElementById('target').className='black'"/>
 	</div>
+	<article>
+		<?php 
+		if(!empty($_GET['id']))
+			echo file_get_contents($_GET['id'].".txt");
+		?>
+	</article>
 </body>
 </html>
