@@ -30,16 +30,12 @@ $result = mysqli_query($conn, "SELECT * FROM topic");
 		<a href="http://localhost/Webn/write.php">쓰기</a>
 	</div>
 	<article>
-		<?php 
-		if(empty($_GET['id']) === false) {
-			$sql = "SELECT topic.id,title,name,description FROM topic LEFT JOIN user ON topic.author = user.id WHERE topic.id=".$_GET['id'];
-			$result = mysqli_query($conn, $sql);
-			$row = mysqli_fetch_assoc($result);
-			echo '<h2>'.$row['title'].'</h2>';
-			echo '<p>'.$row['name'].'</p>';
-			echo $row['description'];
-		}
-		?>
+		<form action="process.php" method="post">
+			<p>제목 : <input type="text" name="title"></p>
+			<p>작성자: <input type="text" name="author"></p>
+			<p>본문 : <textarea name="description"></textarea></p>
+			<input type="submit">
+		</form>
 	</article>
 </body>
 </html>
