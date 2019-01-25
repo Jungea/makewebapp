@@ -5,10 +5,14 @@
 	<meta charset="utf-8">
 </head>
 <body>
-	<form action="8-2.php">
-		<p>비밀번호를 입력해주세요.</p>
-		<input type="text" name="password">
-		<input type="submit">
+	<form action="14.php">
+		<p>name &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text" name="name">
+		</p>
+		<p>password&nbsp;
+			<input type="password" name="password">
+		</p>
+		<input type="submit" value="로그인">
 	</form>
 </body>
 </html>
